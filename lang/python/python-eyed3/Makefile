@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-eyeD3
-PKG_VERSION:=0.9.9
+PKG_NAME:=python-eyed3
+PKG_VERSION:=0.9.5
 PKG_RELEASE:=1
 
-PYPI_NAME:=eyed3
-PKG_HASH:=a8affaae19384aca66f6efef3babd705042a76e546f08e886f5f28691ac62a3b
+PYPI_NAME:=eyeD3
+PKG_HASH:=faf5806197f2093e82c2830d41f2378f07b3a9da07a16fafb14fc6fbdebac50a
 
 PKG_MAINTAINER:=Tim Dodge <tim@dodge.me.uk>
 PKG_LICENSE:=GPL3
@@ -22,7 +22,7 @@ include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
-define Package/python3-eyeD3
+define Package/python3-eyed3
   SECTION:=lang
   CATEGORY:=Languages
   SUBMENU:=Python
@@ -34,9 +34,9 @@ define Package/python3-eyeD3
 	+python3-deprecation
 endef
 
-define Package/python3-eyeD3/description
+define Package/python3-eyed3/description
   Python tool for working with audio files
 endef
 
-$(eval $(call Py3Package,python3-eyeD3))
-$(eval $(call BuildPackage,python3-eyeD3))
+$(eval $(call Py3Package,python3-eyed3))
+$(eval $(call BuildPackage,python3-eyed3))
