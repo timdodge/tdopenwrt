@@ -1,0 +1,15 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -24,6 +24,12 @@ packages = [
+     { include = "forecast_solar", from = "src" },
+ ]
+ 
++[tool.poetry]
++name = "forecast-solar"
++version = "4.2.0"
++description = "Asynchronous Python client for getting forecast solar information"
++authors = ["Klaas Schoute <hello@student-techlife.com>"]
++
+ [tool.poetry.dependencies]
+ aiohttp = ">=3.0.0"
+ python = "^3.11"
