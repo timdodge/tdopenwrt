@@ -32,7 +32,8 @@ define Package/python3-eyed3
   DEPENDS:= \
 	+python3 \
 	+python3-filetype \
-	+python3-deprecation
+	+python3-deprecation \
+	+python3-yaml
 endef
 
 define Package/python3-eyed3/description
