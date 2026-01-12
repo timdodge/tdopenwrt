@@ -42,3 +42,4 @@ endef
 
 $(eval $(call Py3Package,python3-eyed3))
 $(eval $(call BuildPackage,python3-eyed3))
+$(eval $(call BuildPackage,python3-eyed3-src))
