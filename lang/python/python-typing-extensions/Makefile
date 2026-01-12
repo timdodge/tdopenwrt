@@ -50,5 +50,4 @@ endef
 
 $(eval $(call Py3Package,python3-typing-extensions))
 $(eval $(call BuildPackage,python3-typing-extensions))
-$(eval $(call BuildPackage,python3-typing-extensions-src))
 $(eval $(call HostBuild))
