@@ -72,7 +72,7 @@ endef
 define Package/zabbix-agentd-openssl
   $(call Package/zabbix/Default)
   TITLE+= agentd (with OpenSSL)
-  DEPENDS+= +libevent2-pthreads +libopenssl
+  DEPENDS+= +libevent2-pthreads +libopenssl +libcurl
   PROVIDES:=zabbix-agentd
   VARIANT:=openssl
 endef
@@ -174,7 +174,7 @@ define Package/zabbix-server-openssl
   $(call Package/zabbix-server/Default)
   TITLE+= (with OpenSSL)
   PROVIDES:=zabbix-server
-  DEPENDS+= +libopenssl +libnetsnmp-ssl +libssh2
+  DEPENDS+= +libopenssl +libnetsnmp-ssl +libssh2 +libcurl
   VARIANT:=openssl
 endef
 
@@ -275,9 +275,9 @@ CONFIGURE_ARGS+= \
 
 ifeq ($(BUILD_VARIANT),openssl)
 	CONFIGURE_ARGS+= --with-openssl="$(STAGING_DIR)/usr" \
-	--with-libcurl=$(STAGING_DIR)/usr/include \
-	--with-net-snmp=$(STAGING_DIR)/usr/include \
-	--with-ssh2=$(STAGING_DIR)/usr/include
+	--with-libcurl \
+	--with-net-snmp \
+	--with-ssh2=$(STAGING_DIR)/usr
 endif
 
 ifeq ($(BUILD_VARIANT),gnutls)
