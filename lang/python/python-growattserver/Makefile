@@ -8,13 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-growattserver
-PKG_VERSION:=1.9.0
+PKG_VERSION:=2.0.1
 PKG_RELEASE:=1
 
 
 PYPI_NAME:=growattserver
-#PYTHON3_PKG_WHEEL_NAME:=growattserver
-PKG_HASH:=1af610b21f7d7b5b94fdfbf17a581493efed8bf00f3ebf14b2e3c08f0b6c3998
+PKG_HASH:=12f23e04b5ac621ca54d3dbee32be13df56c981a8bd52eaeaf3485f16084db8a
 
 PKG_MAINTAINER:=Tim Dodge <tim@dodge.me.uk>
 PKG_LICENSE:=MIT
