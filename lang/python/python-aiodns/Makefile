@@ -8,16 +8,20 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-aiodns
-PKG_VERSION:=3.6.1
+PKG_VERSION:=4.0.4
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiodns
-PKG_HASH:=b0e9ce98718a5b8f7ca8cd16fc393163374bc2412236b91f6c851d066e3324b6
+PKG_HASH:=cb10e0c0d2591636716ad2fe402e977c16d71bdaf76bb8cb49e8a6633596f736
 
 PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
 PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE.txt
+PKG_LICENSE_FILES:=LICENSE
 PKG_CPE_ID:=cpe:/a:aiodns:aiodns
+
+# pyproject build-system.requires lists pycares. OpenWrt's python-pycares
+# package is target-only, so there is no python-pycares/host to depend on.
+PKG_BUILD_DEPENDS:=python-setuptools/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk

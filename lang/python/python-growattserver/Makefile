@@ -8,16 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-growattserver
-PKG_VERSION:=2.0.1
+PKG_VERSION:=2.2.0
 PKG_RELEASE:=1
 
 
 PYPI_NAME:=growattserver
-PKG_HASH:=12f23e04b5ac621ca54d3dbee32be13df56c981a8bd52eaeaf3485f16084db8a
+PKG_HASH:=a8fcf4867de4d8f609c850225442e76c43060592c60acc904fea72a69fa1a268
 
 PKG_MAINTAINER:=Tim Dodge <tim@dodge.me.uk>
 PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE.txt
+PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk

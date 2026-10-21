@@ -8,16 +8,18 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-aiohttp
-PKG_VERSION:=3.9.3
+PKG_VERSION:=3.14.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=aiohttp
-PKG_HASH:=90842933e5d1ff760fae6caca4b2b3edba53ba8f4b71e95dacf2818a2aca06f7
+PKG_HASH:=5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178
 
 PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
-PKG_LICENSE:=Apache-2.0
-PKG_LICENSE_FILES:=LICENSE.txt
+PKG_LICENSE:=Apache-2.0 AND MIT
+PKG_LICENSE_FILES:=LICENSE.txt vendor/llhttp/LICENSE
 PKG_CPE_ID:=cpe:/a:aiohttp:aiohttp
+
+PKG_BUILD_DEPENDS:=python-setuptools/host python-pkgconfig/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -31,12 +33,12 @@ define Package/python3-aiohttp
   URL:=https://github.com/aio-libs/aiohttp
   DEPENDS:= \
 	+python3 \
+	+python3-aiohappyeyeballs \
 	+python3-aiosignal \
-	+python3-async-timeout \
 	+python3-attrs \
-	+python3-charset-normalizer \
 	+python3-frozenlist \
 	+python3-multidict \
+	+python3-propcache \
 	+python3-yarl
 endef
 

@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=whisper.cpp
-PKG_VERSION:=1.8.4
+PKG_VERSION:=1.9.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=v$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/ggml-org/$(PKG_NAME)/archive/refs/tags/v$(PKG_VERSION).tar.gz?
-PKG_HASH:=b26f30e52c095ccb75da40b168437736605eb280de57381887bf9e2b65f31e66
+PKG_HASH:=ff1a9053feb509ff9d7729703355541ae9690073a6b1c40eb692c962e0dc1720
 
 PKG_MAINTAINER:=Tim Dodge <tim@dodge.me.uk>
 PKG_LICENSE:=MIT
@@ -23,7 +23,8 @@ include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
 CMAKE_OPTIONS += \
-  -DWHISPER_FFMPEG=yes
+  -DWHISPER_BUILD_IS_DEV=OFF \
+  -DWHISPER_COMMON_FFMPEG=yes
 
 define Package/whisper.cpp
   SECTION:=utils

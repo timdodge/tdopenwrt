@@ -8,15 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-multidict
-PKG_VERSION:=6.7.0
+PKG_VERSION:=7.1.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=multidict
-PKG_HASH:=c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5
+PKG_HASH:=61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec
 
 PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
+
+PKG_BUILD_DEPENDS:=python-setuptools/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk

@@ -8,17 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=yarl
-PKG_VERSION:=1.9.2
+PKG_VERSION:=1.25.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571
+PKG_HASH:=03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7
 
 PKG_MAINTAINER:=Josef Schlehofer <pepe.schlehofer@gmail.com>
 PKG_LICENSE:=Apache-2.0
-PKG_LICENSE_FILES:=LICENSE
+PKG_LICENSE_FILES:=LICENSE NOTICE
 
-PKG_BUILD_DEPENDS:=python-cython/host
+PKG_BUILD_DEPENDS:=python-setuptools/host python-expandvars/host python-cython/host
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -33,17 +33,13 @@ define Package/python3-yarl
   DEPENDS:= \
   +python3-light \
   +python3-multidict \
+  +python3-propcache \
   +python3-urllib \
   +python3-idna
 endef
 
 define Package/python3-yarl/description
 Yet another URL library
-endef
-
-define Build/Prepare
-	$(call Build/Prepare/Default)
-	$(STAGING_DIR_HOSTPKG)/bin/cythonize $(PKG_BUILD_DIR)/yarl/_quoting_c.pyx
 endef
 
 $(eval $(call Py3Package,python3-yarl))
