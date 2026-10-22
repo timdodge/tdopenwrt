@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=libmaodbc
 PKG_VERSION:=3.2.10
 LIB_VERSION:=3.4.5
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 #PKG_SOURCE:=mariadb-connector-odbc-$(PKG_VERSION)-src.tar.gz
 #PKG_SOURCE_URL := \
